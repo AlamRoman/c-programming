@@ -38,7 +38,6 @@ int rnd(){
     int num;
     time_t t;
     srand((unsigned) time(&t));
-       // random=floor(random / 10);
     num=rand() % 8;
     return num;
 }
@@ -126,7 +125,6 @@ int playagain(){
     } while (yn != 'y' && yn != 'n');
     if (yn == 'y')
     {
-        //ch[] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '\0'};
         for ( i = 0; i < 9; i++)
         {
             ch[i]='\0';
@@ -139,6 +137,7 @@ int playagain(){
     {
         system("cls");
         printf("    Player: %d   |   Computer: %d \n\n",playerscore,computerscore);
+        printf("Press any key to continue: \n");
         getch();
         loop=0;
     }
