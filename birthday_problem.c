@@ -2,8 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+/*
+The birthday problem asks for the probability that, in a set of n randomly chosen people, at least two will share a birthday.
+The birthday paradox is that the probability of a shared birthday exceeds 50% in a group of only 23 people.
+*/
+
 int main(){
-    int persons=50;
+    int persons=50;//number of peoples
     int i,j,birthday,birthmonth,random,searching_day,searching_month,match_found=0;
     int day[31]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
     int month[12]={1,2,3,4,5,6,7,8,9,10,11,12};

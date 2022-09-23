@@ -2,6 +2,8 @@
 #include <math.h>
 #define true 1
 
+//Converts a decimal number into bynary
+
 int digit_to_store_binary(int number){
     int n=1;
     while (true)
