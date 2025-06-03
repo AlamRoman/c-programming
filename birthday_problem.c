@@ -19,26 +19,26 @@ int main(){
     {
         random=rand() % 12;
         birthmonth=month[random];
-        birthdates[i][2]=birthmonth;
+        birthdates[i][1]=birthmonth;
 
         if (birthmonth==1 || birthmonth==3 || birthmonth==5 || birthmonth==7 || birthmonth==8 || birthmonth==10 || birthmonth==12)
         {
             random=rand() % 31;
             birthday=day[random];
-            birthdates[i][1]=birthday;
+            birthdates[i][0]=birthday;
         }else if (birthmonth==2)
         {
             random=rand() % 28;
             birthday=day[random];
-            birthdates[i][1]=birthday;
+            birthdates[i][0]=birthday;
         }else
         {
             random=rand() % 30;
             birthday=day[random];
-            birthdates[i][1]=birthday;
+            birthdates[i][0]=birthday;
         }
         
-        printf("Person %d:\tDay:\t%d\tMonth:\t%d\n",i+1,birthdates[i][1],birthdates[i][2]);
+        printf("Person %d:\tDay:\t%d\tMonth:\t%d\n",i+1,birthdates[i][0],birthdates[i][1]);
         
     }
 
@@ -49,19 +49,19 @@ int main(){
     
     for ( i = 0; i < persons; i++)
     {
-        searching_day=birthdates[i][1];
-        searching_month=birthdates[i][2];
+        searching_day=birthdates[i][0];
+        searching_month=birthdates[i][1];
 
         for ( j = 0; j < persons; j++)
         {
             if (j==i)
             {
                 continue;
-            }else if (birthdates[j][1]==birthdates[i][1])
+            }else if (birthdates[j][0]==birthdates[i][0])
             {
-                if (birthdates[j][2]==birthdates[i][2])
+                if (birthdates[j][1]==birthdates[i][1])
                 {
-                    printf("Match found with person %d and person %d\n",i,j);
+                    printf("Match found with person %d and person %d\n",i+1,j+1);
                     match_found++;
                 } 
             } 
@@ -74,7 +74,7 @@ int main(){
         printf("No match found\n");
     }else
     {
-        printf("\nMatch found: %d\n",match_found/2);
+        printf("\n>>> Among %d people, %d pairs of matching birthdays were found!\n", persons, match_found / 2);
     }
     
     getch();
